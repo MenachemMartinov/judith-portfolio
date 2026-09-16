@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Graphify generated outputs
+graphify-out/
+
+# Local backups
+_source-backup/
+
+# Kilo agent local state
+.kilo/worktrees/
+.kilo/agent-manager.json
+.kilo/setup-script
+.kilo/setup-script.*
