@@ -2,9 +2,11 @@
 
 ## Source and authority
 
-This guide is derived exclusively from the pasted “Lifestyle Session” HTML reference. Existing website pages are not design references; they are future consumers of this guide and may need to change to match it.
+This guide is derived exclusively from `orginal.html`, the pasted “Lifestyle Session” HTML reference, and the supplied screenshots of that same original page. Existing website pages are not design references; they are future consumers of this guide and may need to change to match it.
 
 When an existing page conflicts with this document, follow this document. Preserve page-specific content, facts, images, and links, but align its visual design with the system below.
+
+For exact image layout, proportions, spacing, or framing, `orginal.html` and the supplied original screenshots are the canonical implementation reference. Do not use image patterns from the newer pages to reinterpret them.
 
 ## 1. Design character
 
@@ -205,14 +207,39 @@ Use `inline-flex items-center gap-2 bg-[#8E7E73]/10 text-[#8E7E73] px-4 py-2 rou
 
 ### Asymmetric gallery
 
+- The gallery stays inside the surrounding `max-w-3xl` narrative container. Do not expand it to `max-w-5xl`, `max-w-6xl`, or full viewport width.
 - Grid: `grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 items-start`.
 - First column begins at the top.
 - Second column: `mt-8 md:mt-12`.
 - Third column: hidden on mobile, `md:flex`, and `mt-24`.
 - Columns: `flex flex-col gap-3 md:gap-6`.
 - Images: `rounded-xl shadow-sm object-cover w-full h-auto`.
+- Keep each image's natural aspect ratio with `h-auto`. Do not add fixed heights, `aspect-*` classes, uniform crops, or equal-height rows.
+- Place the images directly inside the vertical column containers. Do not wrap each image in a card, padded frame, link tile, or `overflow-hidden` shell unless the user explicitly requests clickable images.
+- Preserve the source order by column: images 1 and 4 in the first column, 2 and 5 in the second, and 3 and 6 in the third.
 
-This staggered gallery is a signature element. Do not replace it with an equal-height grid or carousel.
+Canonical structure:
+
+```html
+<div class="py-12 reveal">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 items-start">
+    <div class="flex flex-col gap-3 md:gap-6">
+      <img class="rounded-xl shadow-sm object-cover w-full h-auto" alt="...">
+      <img class="rounded-xl shadow-sm object-cover w-full h-auto" alt="...">
+    </div>
+    <div class="flex flex-col gap-3 md:gap-6 mt-8 md:mt-12">
+      <img class="rounded-xl shadow-sm object-cover w-full h-auto" alt="...">
+      <img class="rounded-xl shadow-sm object-cover w-full h-auto" alt="...">
+    </div>
+    <div class="hidden md:flex flex-col gap-6 mt-24">
+      <img class="rounded-xl shadow-sm object-cover w-full h-auto" alt="...">
+      <img class="rounded-xl shadow-sm object-cover w-full h-auto" alt="...">
+    </div>
+  </div>
+</div>
+```
+
+This staggered, portrait-led gallery is a signature element. Do not replace it with CSS columns, masonry, a uniform card grid, equal-height rows, landscape thumbnails, or a carousel.
 
 ### Feature cards
 
@@ -253,6 +280,19 @@ Use `text-center bg-[#7F9083]/10 rounded-full py-6 px-8 max-w-sm mx-auto border 
 - Two-column desktop grid with `gap-8`.
 - Shell: `bg-[#FCFBF7] p-4 md:p-6 rounded-3xl shadow-sm border border-white`.
 - Image: `w-full max-w-sm rounded-xl shadow-sm`.
+- Center each screenshot inside its shell with `flex items-center justify-center`.
+- Show the complete testimonial screenshot at its natural aspect ratio. Do not crop it, stretch it, use `object-cover`, force equal image heights, or make it fill the card vertically.
+- Keep the generous Vanilla space around the screenshot. The outer rounded card and the inner rounded screenshot are both visible parts of the original design.
+
+Canonical structure:
+
+```html
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div class="bg-[#FCFBF7] p-4 md:p-6 rounded-3xl shadow-sm border border-white flex items-center justify-center">
+    <img class="w-full max-w-sm rounded-xl shadow-sm" alt="...">
+  </div>
+</div>
+```
 
 ### Final CTA
 
@@ -283,8 +323,10 @@ Photography carries most of the visual emotion. Choose images that are candid, r
 Avoid harsh flash, dramatic grading, busy props, artificial poses, thick frames, or decorative overlays.
 
 - Use meaningful Hebrew `alt` text.
-- Preserve natural aspect ratios in editorial galleries.
+- Preserve natural aspect ratios in editorial galleries and testimonial screenshots.
 - Keep `rounded-xl` and `shadow-sm` consistent.
+- Treat gallery photographs and testimonial screenshots as two distinct image modes: gallery photos appear directly in staggered columns; testimonials sit inside padded Vanilla cards.
+- Do not apply the newer pages' masonry, fixed-aspect card, full-bleed, or linked-tile image treatments.
 - Never invent image URLs or replace missing approved photos with unrelated stock imagery.
 
 ## 9. Motion
@@ -347,7 +389,7 @@ Prices, packages, dates, availability, and service details are page-specific. Us
 2. Remove visual patterns that do not appear in this guide.
 3. Replace colors, fonts, shadows, corners, spacing, and type with the canonical tokens.
 4. Rebuild the opening as a logo-led centered hero unless explicitly directed otherwise.
-5. Convert suitable galleries to the asymmetric gallery.
+5. Convert suitable galleries to the original narrow, three-column staggered gallery. Remove CSS-column masonry, uniform aspect ratios, fixed heights, image cards, and forced crops.
 6. Convert benefit groups to the two-column premium card pattern.
 7. Use the compact price pill when there is one offer.
 8. Convert FAQs to the canonical native details pattern.
@@ -358,13 +400,14 @@ Do not copy page-specific text, prices, packages, or photographs from the Lifest
 
 ## 13. AI quality checklist
 
-- [ ] The pasted Lifestyle HTML was the only visual source of truth.
+- [ ] `orginal.html`, the pasted Lifestyle HTML, and its supplied screenshots were the only visual sources of truth.
 - [ ] Existing pages were treated as content to restyle, not as design references.
 - [ ] The page uses Vanilla, Coffee, Sage, and White only.
 - [ ] Headings and actions use Varela Round; body copy uses Assistant.
 - [ ] The layout follows the canonical widths and spacing.
 - [ ] The opening is a centered logo-led hero with one primary CTA.
 - [ ] Cards, galleries, FAQs, price treatment, footer, and WhatsApp action match this guide.
+- [ ] Gallery photos retain their natural proportions in the original staggered columns, and testimonial screenshots remain fully visible inside padded cards.
 - [ ] The page remains Hebrew RTL and responsive.
 - [ ] Motion uses only the reveal and breathing patterns.
 - [ ] Missing facts, images, and URLs were not invented.
@@ -373,4 +416,4 @@ Do not copy page-specific text, prices, packages, or photographs from the Lifest
 
 ## 14. Ready-to-use AI instruction
 
-> Restyle or create the requested Hebrew RTL page using `STYLE_GUIDE.md` as the sole visual source of truth. The guide was derived exclusively from the pasted Lifestyle Session reference; do not infer design rules from the existing website pages. Preserve accurate page-specific content, metadata, approved images, and destinations, but align the page's palette, typography, spacing, layout, components, imagery treatment, and motion with the guide. Do not invent business facts, prices, packages, image URLs, or links. Verify mobile and desktop layout, RTL flow, accessibility, and reduced motion before returning the completed page.
+> Restyle or create the requested Hebrew RTL page using `STYLE_GUIDE.md` as the sole visual source of truth. The guide was derived exclusively from `orginal.html`, the pasted Lifestyle Session reference, and the supplied original screenshots; do not infer design rules from the existing website pages. Preserve accurate page-specific content, metadata, approved images, and destinations, but align the page's palette, typography, spacing, layout, components, imagery treatment, and motion with the guide. Preserve the original narrow staggered gallery with natural image proportions and the fully visible testimonial screenshots inside padded cards. Do not invent business facts, prices, packages, image URLs, or links. Verify mobile and desktop layout, RTL flow, accessibility, and reduced motion before returning the completed page.
