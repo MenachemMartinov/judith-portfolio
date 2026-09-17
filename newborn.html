@@ -40,7 +40,7 @@
         color: #8e7e73;
       }
       html {
-        scroll-padding-top: 1rem;
+        scroll-padding-top: 5.5rem;
       }
       ::selection {
         background: #7f9083;
@@ -89,6 +89,18 @@
       details > summary::-webkit-details-marker {
         display: none;
       }
+      .js-nav-link.is-current {
+        color: #7f9083;
+        box-shadow: inset 0 -2px 0 #7f9083;
+      }
+      .site-header {
+        background: rgba(252, 251, 247, 0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(142, 126, 115, 0.12);
+      }
+      body.nav-open {
+        overflow: hidden;
+      }
       .img-ph {
         min-height: 260px;
         background: rgba(127, 144, 131, 0.1);
@@ -114,7 +126,7 @@
   </head>
   <body class="font-body antialiased overflow-x-hidden">
     <a href="#main-content" class="skip-link">דלגו לתוכן</a>
-    <header class="hidden" aria-hidden="true" inert>
+    <header class="site-header sticky top-0 z-40">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
         <a href="index.html" data-site-link="home" class="flex items-center gap-3 min-w-0">
           <img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/6d/73/a0/d5/6d73a0d5513f492e0f83c14ff808ca16/images/e4e9da5f3160eaa0be2b85c6cb248496.png?cc=8&convert=webp&maxWidth=250&maxHeight=175" alt="יהודית אקשטיין — צלמת ילדים ומשפחה" class="h-12 sm:h-14 w-auto object-contain" />
