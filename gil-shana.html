@@ -40,7 +40,7 @@
         color: #8e7e73;
       }
       html {
-        scroll-padding-top: 5.5rem;
+        scroll-padding-top: 1rem;
       }
       ::selection {
         background: #7f9083;
@@ -89,24 +89,9 @@
       details > summary::-webkit-details-marker {
         display: none;
       }
-      .js-nav-link.is-current {
-        color: #7f9083;
-        box-shadow: inset 0 -2px 0 #7f9083;
-      }
-      .site-header {
-        background: rgba(252, 251, 247, 0.92);
-        backdrop-filter: blur(14px);
-        border-bottom: 1px solid rgba(142, 126, 115, 0.12);
-      }
-      body.nav-open {
-        overflow: hidden;
-      }
       .img-ph {
         min-height: 260px;
-        background:
-          radial-gradient(circle at 30% 20%, rgba(127, 144, 131, 0.16), transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(142, 126, 115, 0.12), transparent 45%),
-          #f7f4ee;
+        background: rgba(127, 144, 131, 0.1);
       }
       @media (prefers-reduced-motion: reduce) {
         html {
@@ -129,7 +114,7 @@
   </head>
   <body class="font-body antialiased overflow-x-hidden">
     <a href="#main-content" class="skip-link">דלגו לתוכן</a>
-    <header class="site-header sticky top-0 z-40">
+    <header class="hidden" aria-hidden="true" inert>
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
         <a href="index.html" data-site-link="home" class="flex items-center gap-3 min-w-0">
           <img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/6d/73/a0/d5/6d73a0d5513f492e0f83c14ff808ca16/images/e4e9da5f3160eaa0be2b85c6cb248496.png?cc=8&convert=webp&maxWidth=250&maxHeight=175" alt="יהודית אקשטיין — צלמת ילדים ומשפחה" class="h-12 sm:h-14 w-auto object-contain" />
@@ -186,7 +171,10 @@
     </header>
 
     <main id="main-content">
-      <section class="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-20 pb-32">
+      <section class="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center px-6 py-20">
+        <a href="index.html" data-site-link="home" class="mb-12 reveal active" aria-label="יהודית אקשטיין — דף הבית">
+          <img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/6d/73/a0/d5/6d73a0d5513f492e0f83c14ff808ca16/images/e4e9da5f3160eaa0be2b85c6cb248496.png?cc=8&convert=webp&maxWidth=250&maxHeight=175" alt="יהודית אקשטיין — צלמת ילדים ומשפחה" class="w-48 md:w-56 object-contain opacity-90 mx-auto" />
+        </a>
         <div class="max-w-4xl mx-auto space-y-8 reveal active" style="transition-delay: 100ms">
           <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl text-[#8E7E73] leading-[1.3] md:leading-[1.2]">
             לתפוס את הרגעים האחרונים שלהם כתינוקות,<br class="hidden md:block" />
@@ -227,7 +215,7 @@
             </p>
           </div>
         <div class="py-12 reveal">
-          <div class="columns-2 md:columns-3 gap-3 md:gap-6">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 items-start [&>*:nth-child(3n+2)]:mt-8 md:[&>*:nth-child(3n+2)]:mt-12 [&>*:nth-child(3n)]:hidden md:[&>*:nth-child(3n)]:block md:[&>*:nth-child(3n)]:mt-24">
               <a href="https://res.cloudinary.com/yziliweb/image/upload/v1789650365/157A7013_copy_2.webp" target="_blank" rel="noopener noreferrer" class="mb-3 md:mb-6 inline-block w-full break-inside-avoid overflow-hidden rounded-xl shadow-sm hover:opacity-90 transition-opacity duration-300">
                 <img src="https://res.cloudinary.com/yziliweb/image/upload/c_limit,w_1400/f_auto/q_auto/v1789650365/157A7013_copy_2.webp" class="rounded-xl object-cover w-full h-auto" alt="צילום גיל שנה — באנר ONE עם עוגיות וחלב" loading="lazy" decoding="async" />
               </a>
@@ -306,7 +294,7 @@
           </p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <article class="bg-white p-8 rounded-3xl shadow-premium border border-[#FCFBF7]/50 hover:-translate-y-2 transition-transform duration-500 reveal flex flex-col">
-              <div class="w-12 h-12 bg-[#FCFBF7] text-[#7F9083] rounded-full flex items-center justify-center mx-auto mb-6 text-xl" aria-hidden="true">🌸</div>
+              <div class="w-12 h-12 bg-[#FCFBF7] text-[#7F9083] rounded-full flex items-center justify-center mx-auto mb-6" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" d="M12 3c2 0 3 2 3 4-2 0-3-1-3-4Zm0 18c-2 0-3-2-3-4 2 0 3 1 3 4ZM3 12c0-2 2-3 4-3 0 2-1 3-4 3Zm18 0c0 2-2 3-4 3 0-2 1-3 4-3Z"/></svg></div>
               <h4 class="font-heading text-2xl text-[#8E7E73] mb-2 text-center">חבילת בסיס</h4>
               <p class="font-heading text-lg text-[#7F9083] mb-4 text-center">כל היחס לבייבי שלך</p>
               <p class="text-[#8E7E73]/80 font-light text-center mb-8 leading-relaxed">סשן ממוקד וחווייתי שנועד להעניק לילד שלך את הבמה המושלמת, ברוגע ובלי שום מאמץ.</p>
@@ -323,7 +311,7 @@
               </div>
             </article>
             <article class="bg-white p-8 rounded-3xl shadow-premium border border-[#7F9083]/20 hover:-translate-y-2 transition-transform duration-500 reveal flex flex-col" style="transition-delay: 100ms">
-              <div class="w-12 h-12 bg-[#FCFBF7] text-[#7F9083] rounded-full flex items-center justify-center mx-auto mb-6 text-xl" aria-hidden="true">💎</div>
+              <div class="w-12 h-12 bg-[#FCFBF7] text-[#7F9083] rounded-full flex items-center justify-center mx-auto mb-6" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m12 21 9-10-4-7H7l-4 7 9 10Zm-9-10h18M7 4l5 17 5-17"/></svg></div>
               <h4 class="font-heading text-2xl text-[#8E7E73] mb-2 text-center">חבילת פרימיום</h4>
               <p class="font-heading text-lg text-[#7F9083] mb-4 text-center">החגיגה המשפחתית המלאה</p>
               <p class="text-[#8E7E73]/80 font-light text-center mb-8 leading-relaxed">המזכרת המושלמת לדורות. משלבת את חגיגת גיל שנה של הילד יחד עם החום והאהבה של כל המשפחה סביבו.</p>
@@ -409,14 +397,14 @@
         <div class="max-w-4xl mx-auto text-center reveal">
           <h2 class="font-heading text-3xl md:text-4xl text-[#8E7E73] mb-12">המלצות</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-[#FCFBF7] p-4 md:p-6 rounded-3xl shadow-sm border-2 border-dashed border-[#8E7E73]/25 min-h-[280px] flex items-center justify-center">
+            <div class="bg-[#FCFBF7] p-4 md:p-6 rounded-3xl shadow-sm border border-[#7F9083]/20 min-h-[280px] flex items-center justify-center">
               <div class="text-center space-y-3 px-4">
                 <p class="font-heading text-xs tracking-widest text-[#8E7E73]/40">[PLACEHOLDER]</p>
                 <p class="font-heading text-lg text-[#8E7E73]/70">צילום מסך המלצה 1</p>
                 <p class="text-sm text-[#8E7E73]/50 font-light leading-relaxed">הוכחה חברתית — החליפו כאן בתמונת צילום מסך של המלצה</p>
               </div>
             </div>
-            <div class="bg-[#FCFBF7] p-4 md:p-6 rounded-3xl shadow-sm border-2 border-dashed border-[#8E7E73]/25 min-h-[280px] flex items-center justify-center">
+            <div class="bg-[#FCFBF7] p-4 md:p-6 rounded-3xl shadow-sm border border-[#7F9083]/20 min-h-[280px] flex items-center justify-center">
               <div class="text-center space-y-3 px-4">
                 <p class="font-heading text-xs tracking-widest text-[#8E7E73]/40">[PLACEHOLDER]</p>
                 <p class="font-heading text-lg text-[#8E7E73]/70">צילום מסך המלצה 2</p>

@@ -40,7 +40,7 @@
         color: #8e7e73;
       }
       html {
-        scroll-padding-top: 5.5rem;
+        scroll-padding-top: 1rem;
       }
       ::selection {
         background: #7f9083;
@@ -89,24 +89,9 @@
       details > summary::-webkit-details-marker {
         display: none;
       }
-      .js-nav-link.is-current {
-        color: #7f9083;
-        box-shadow: inset 0 -2px 0 #7f9083;
-      }
-      .site-header {
-        background: rgba(252, 251, 247, 0.92);
-        backdrop-filter: blur(14px);
-        border-bottom: 1px solid rgba(142, 126, 115, 0.12);
-      }
-      body.nav-open {
-        overflow: hidden;
-      }
       .img-ph {
         min-height: 260px;
-        background:
-          radial-gradient(circle at 30% 20%, rgba(127, 144, 131, 0.16), transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(142, 126, 115, 0.12), transparent 45%),
-          #f7f4ee;
+        background: rgba(127, 144, 131, 0.1);
       }
       @media (prefers-reduced-motion: reduce) {
         html {
@@ -129,7 +114,7 @@
   </head>
   <body class="font-body antialiased overflow-x-hidden">
     <a href="#main-content" class="skip-link">דלגו לתוכן</a>
-    <header class="site-header sticky top-0 z-40">
+    <header class="hidden" aria-hidden="true" inert>
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
         <a href="index.html" data-site-link="home" class="flex items-center gap-3 min-w-0">
           <img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/6d/73/a0/d5/6d73a0d5513f492e0f83c14ff808ca16/images/e4e9da5f3160eaa0be2b85c6cb248496.png?cc=8&convert=webp&maxWidth=250&maxHeight=175" alt="יהודית אקשטיין — צלמת ילדים ומשפחה" class="h-12 sm:h-14 w-auto object-contain" />
@@ -186,7 +171,10 @@
     </header>
 
     <main id="main-content">
-      <section class="relative w-full min-h-[88vh] flex flex-col items-center justify-center text-center px-6 pt-16 pb-24">
+      <section class="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center px-6 py-20">
+        <a href="index.html" data-site-link="home" class="mb-12 reveal active" aria-label="יהודית אקשטיין — דף הבית">
+          <img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/6d/73/a0/d5/6d73a0d5513f492e0f83c14ff808ca16/images/e4e9da5f3160eaa0be2b85c6cb248496.png?cc=8&convert=webp&maxWidth=250&maxHeight=175" alt="יהודית אקשטיין — צלמת ילדים ומשפחה" class="w-48 md:w-56 object-contain opacity-90 mx-auto" />
+        </a>
         <div class="max-w-4xl mx-auto space-y-8 reveal active">
           <p class="font-heading text-sm md:text-base tracking-wide text-[#7F9083]">יהודית אקשטיין · צילומי ילדים ומשפחה</p>
           <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl text-[#8E7E73] leading-[1.3] md:leading-[1.2]">
@@ -229,7 +217,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <article class="bg-white rounded-3xl shadow-premium overflow-hidden hover:-translate-y-2 transition-transform duration-500 reveal flex flex-col">
             <div
-              class="img-ph min-h-[220px] border-b border-dashed border-[#8E7E73]/20 flex items-center justify-center overflow-hidden"
+              class="img-ph min-h-[220px] border-b border-[#7F9083]/20 flex items-center justify-center overflow-hidden"
               data-image-key="newbornCard"
               data-alt="צילום ניו בורן"
               data-image-class="w-full h-full object-cover"
@@ -273,7 +261,7 @@
           <h2 class="font-heading text-3xl md:text-4xl text-center text-[#8E7E73] mb-4 reveal">מבחר מהתיק</h2>
           <p class="text-center text-[#8E7E73]/80 font-light mb-4 reveal">תמונות נבחרות מסשן גיל שנה. לחצו על תמונה כדי לפתוח אותה בגודל מלא.</p>
         <div class="py-12 reveal">
-          <div class="columns-2 md:columns-3 gap-3 md:gap-6">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 items-start [&>*:nth-child(3n+2)]:mt-8 md:[&>*:nth-child(3n+2)]:mt-12 [&>*:nth-child(3n)]:hidden md:[&>*:nth-child(3n)]:block md:[&>*:nth-child(3n)]:mt-24">
               <a href="https://res.cloudinary.com/yziliweb/image/upload/v1789650365/157A7013_copy_2.webp" target="_blank" rel="noopener noreferrer" class="mb-3 md:mb-6 inline-block w-full break-inside-avoid overflow-hidden rounded-xl shadow-sm hover:opacity-90 transition-opacity duration-300">
                 <img src="https://res.cloudinary.com/yziliweb/image/upload/c_limit,w_1400/f_auto/q_auto/v1789650365/157A7013_copy_2.webp" class="rounded-xl object-cover w-full h-auto" alt="צילום גיל שנה — באנר ONE עם עוגיות וחלב" loading="lazy" decoding="async" />
               </a>
