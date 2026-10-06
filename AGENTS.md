@@ -2,6 +2,11 @@
 
 These instructions apply to the entire repository and to every AI agent working in it.
 
+## Work log
+
+- Document this project's tasks in the Obsidian vault at `/Users/menachem/Library/Mobile Documents/iCloud~md~obsidian/Documents/esp`, using `🤖 AI Reports/Judith Portfolio Work Log.md`.
+- Keep this project's entries separate from the main GES work log (`🤖 AI Reports/Codex Work Log.md`).
+
 ## Design authority
 
 - Before creating, redesigning, or editing any page or visual component, read `STYLE_GUIDE.md` completely.
